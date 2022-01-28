@@ -5,6 +5,8 @@ namespace App\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use App\Entity\Message;
+use App\Form\MessageType;
 
 class DemoController extends AbstractController
 {
@@ -71,6 +73,16 @@ class DemoController extends AbstractController
 
         return $this->render('demo/damier.html.twig', [
             'damier' => $html,
+        ]);
+    }
+
+    public function addMessage(): Response
+    {
+        $message = new Message();
+        $form = $this->createForm( MessageType::class, $message);
+
+        return $this->render('demo/addMessage.html.twig', [
+            'formulaire' => $form->createView(),
         ]);
     }
 }

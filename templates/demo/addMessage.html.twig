@@ -1,0 +1,32 @@
+{% extends "demo/base.html.twig" %}
+
+{% block title %}
+    Message
+{% endblock %}
+
+{% block stylesheets %}
+    <style>
+        .blanc
+        {
+            width: 50px;
+            height: 50px;
+            background-color: white;
+            color: black;
+            text-align: center;
+        }
+
+        .noir
+        {
+            width: 50px;
+            height: 50px;
+            background-color: black;
+            color: white;
+            text-align: center;
+        }
+    </style>
+{% endblock %}
+
+{% block body %}
+    <h1>Votre message</h1>
+    {{form(formulaire)}}
+{% endblock %}
