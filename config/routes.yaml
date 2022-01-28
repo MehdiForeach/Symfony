@@ -1,3 +1,12 @@
 #index:
 #    path: /
 #    controller: App\Controller\DefaultController::index
+
+accueil:
+    path: /accueil
+    controller: App\Controller\DemoController::accueil
+
+    
+damier:
+    path: /damier
+    controller: App\Controller\DemoController::damier
